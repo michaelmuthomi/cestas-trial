@@ -199,7 +199,15 @@ include 'dbcon.php';
           echo '<span style="color: #2c2c54;   font-size: 15px; margin-top: 50px; border-radius: 50%;">' . $totalItems . '</span>';
           ?>
         </a>
-        <a href="signup.php" class="fa-sharp fa-solid fa-circle-user"></a>
+        <?php
+                session_start();
+                if (isset($_SESSION['loggedIn'])) {
+
+                } else {
+
+                    echo '<a href="signup.php" class="fa-sharp fa-solid fa-circle-user"></a>';
+                }
+                ?>
       </div>
     </div>
 
