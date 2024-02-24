@@ -256,7 +256,7 @@ section{
   width: 15rem;
   height: 15rem;
   border-radius: 50%;
-  background-color: rgba(32, 32, 32, 0.253);
+  background-color: rgba(0, 0, 0, 0.253);
   object-fit: contain;
   -webkit-user-drag: none;
   -moz-user-select: none;
@@ -276,7 +276,7 @@ section{
   margin-top: 1rem;
 
   & h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--black);
     text-transform: capitalize;
   }
@@ -285,7 +285,7 @@ section{
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.24);
+    background-color: rgb(255 242 174 / 53%);
     object-fit: contain;
     -webkit-user-drag: none;
     user-select: none;
