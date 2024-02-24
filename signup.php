@@ -58,6 +58,8 @@ if (isset($_POST['login'])) {
 
 
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
     .sign_up {
         max-width: 400px;
@@ -129,50 +131,19 @@ if (isset($_POST['login'])) {
 
 <body>
     <!--header section starts-->
-    <header>
-        <div class="header-1">
-            <a href="#" style="" class="logo"><i class="fa-solid fa-basket-shopping"></i></i>Cesta- Sign Up</a>
-            <form action="" class="search-box-container">
-
-            </form>
-        </div>
-        <!--header 2-->
-
-        <div class="header-2 " style="width: 1360px;">
-
-            <div id="menu-bar" class="fa-sharp fa-solid fa-bars"></div>
-            <nav class="navbar">
-                <a href="index.php" style="" class="nav-link active">Home</a>
-                <a href="#category" style="" class="nav-link active">Category</a>
-                <a href="#product" style="" class="nav-link active">Product</a>
-                <a href="contactus.php" style="" class="nav-link active">Contact</a>
-                <a href="admin.php" style="" class="nav-link active">Admin</a>
-            </nav>
-
-            <div class="icons">
-                <a href="cart.php" class="fa-sharp fa-solid fa-cart-shopping">
-                    <?php
-                    $countSql = "SELECT COUNT(*) AS total_items FROM cart";
-                    $results = mysqli_query($dbconn, $countSql);
-
-                    $rows = mysqli_fetch_assoc($results);
-                    $totalItems = $rows['total_items'];
-                    echo '<span style="color: #2c2c54;   font-size: 15px; margin-top: 50px; border-radius: 50%;">' . $totalItems . '</span>';
-                    ?>
-                </a>
-                <?php
-
-                if (isset($_SESSION['loggedIn'])) {
-
-                } else {
-
-                    echo '<a href="signup.php" class="fa-sharp fa-solid fa-circle-user"></a>';
-                }
-                ?>
-            </div>
-        </div>
-
-    </header>
+    <nav class="flex items-center gap-20 h-32 px-8 py-4 border-b-[1px] border-gray-100 sticky top-0 bg-white z-10">
+        <img src="./images/Logo.svg" alt="Cesta" class="w-max h-max">
+        <ul class="flex gap-10 text-2xl h-full items-center w-full">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#category">Category</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <input type="text" class="h-full w-full rounded-xl text-xl max-w-[40rem] bg-gray-200 px-10" placeholder="Find fresh fruits & vegetables">
+        </ul>
+        <ul class="flex flex-none gap-10 text-2xl h-full items-center w-max ml-auto">
+            <li><a href="#signup">Join Cesta</a></li>
+            <li><a href="#cart"><img src="./images/cart.svg" alt="cart" class="w-max h-max"></a></li>
+        </ul>
+    </nav>
     <!--header section ends-->
 
 
@@ -181,68 +152,19 @@ if (isset($_POST['login'])) {
         <button class="tab-button" onclick="showTab('login-tab')">Login</button>
     </div>
 
-    <div class="tab-content">
-        <div id="signup-tab" class="tab active">
-
-            <form method="post" action="signup.php" class="sign_up">
-                <div class="logo">
-                    <h1><a href=" " class="navbar-brand">Sign Up</a></h1>
-                    <span class="text-muted">WELCOME TO CESTA</span>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <input type="email" name="email" placeholder="Email" class="form-control" required>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <input type="text" name="username" placeholder="Username" class="form-control" required>
-                    </div>
-                </div>
-
-                <div class="row pt-2">
-                    <div class="col-lg-12">
-                        <input type="password" name="password" placeholder="Password" class="form-control" required>
-                    </div>
-                </div>
-
-                <div class="row pt-2">
-                    <div class="col-lg-12">
-                        <input type="text" value="254" name="contact" id="contactInput" placeholder="Contact"
-                            class="form-control" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" name="signup" class="btn btn-primary">Submit</button>
-                </div>
-            </form>
+    <section class="flex flex-col w-full items-center gap-8 justify-center h-[80vh]">
+        <div class="flex flex-col gap-2">
+            <h2 class="text-3xl font-bold">Welcome to Cesta were glad to have you</h2>
+            <p class="text-2xl font-medium text-center">Sign up to get started</p>
         </div>
-
-        <div id="login-tab" class="tab">
-            <form method="post" action="signup.php">
-                <!-- Your login form inputs here -->
-                <div class="row pt-2">
-                    <div class="col-lg-12">
-                        <input type="email" name="login_email" placeholder="Email" class="form-control" required>
-                    </div>
-                </div>
-
-                <div class="row pt-2">
-                    <div class="col-lg-12">
-                        <input type="password" name="login_password" placeholder="Password" class="form-control"
-                            required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" name="login" class="btn btn-primary">Login</button>
-                </div>
-
-            </form>
-        </div>
-    </div>
+        <form action="signup" class="w-max flex flex-col gap-4">
+            <input type="text" name="username" id="username" placeholder="Full name" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
+            <input type="text" name="contact" id="contactInput" placeholder="Contact" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
+            <input type="email" name="email" id="email" placeholder="Email" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
+            <input type="password" name="password" id="password" placeholder="Password" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
+            <button class="hover:brighten-150 text-2xl h-20 bg-black w-full text-white font-light rounded-lg">Sign Up</button>
+        </form>
+    </section>
 
     <script>
         // Get the input element
