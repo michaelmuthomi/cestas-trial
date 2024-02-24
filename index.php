@@ -33,7 +33,7 @@ include 'dbcon.php';
             <input type="text" class="h-full w-full rounded-xl text-xl max-w-[40rem] bg-gray-200 px-10" placeholder="Find fresh fruits & vegetables">
         </ul>
         <ul class="flex flex-none gap-10 text-2xl h-full items-center w-max ml-auto">
-            <li><a href="#signup">Join Cesta</a></li>
+            <li><a href="./signup.php">Join Cesta</a></li>
             <li><a href="#cart"><img src="./images/cart.svg" alt="cart" class="w-max h-max"></a></li>
         </ul>
     </nav>

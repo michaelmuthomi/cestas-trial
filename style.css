@@ -40,6 +40,13 @@ img{
   -webkit-user-drag: none;
 }
 
+a{
+  &:hover{
+    text-decoration: none;
+    color: var(--green);
+  }
+}
+
 .btn{
   display: inline-block;
   margin-top: 3rem;
