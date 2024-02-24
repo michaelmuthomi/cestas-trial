@@ -134,7 +134,7 @@ if (isset($_POST['login'])) {
 
 <body>
     <!--header section starts-->
-    <nav class="flex items-center gap-20 h-32 px-8 py-4 border-b-[1px] border-gray-100 sticky top-0 bg-white z-10">
+    <nav class="flex items-center gap-20 h-32 px-8 py-6 border-b-[1px] border-gray-100 sticky top-0 bg-white z-10">
         <img src="./images/Logo.svg" alt="Cesta" class="w-max h-max">
         <ul class="flex gap-10 text-2xl h-full items-center w-full">
             <li><a href="#home">Home</a></li>
