@@ -35,6 +35,11 @@ section{
   padding:2rem 9%;
 }
 
+img{
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .btn{
   display: inline-block;
   margin-top: 3rem;
