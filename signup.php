@@ -162,7 +162,7 @@ if (isset($_POST['login'])) {
             <input type="text" name="contact" id="contactInput" placeholder="Contact" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
             <input type="email" name="email" id="email" placeholder="Email" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
             <input type="password" name="password" id="password" placeholder="Password" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
-            <button class="hover:brighten-150 text-2xl h-20 bg-black w-full text-white font-light rounded-lg">Sign Up</button>
+            <button class="hover:bg-gray-800 text-2xl h-20 bg-black w-full text-white font-light rounded-lg">Sign Up</button>
         </form>
     </section>
 
