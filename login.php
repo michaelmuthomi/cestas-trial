@@ -149,22 +149,19 @@ if (isset($_POST['login'])) {
     </nav>
     <!--header section ends-->
 
-
     <section class="flex gap-20 w-full items-center gap-8  h-[80vh]">
         <div class="flex flex-col gap-2 w-1/2 items-center h-3/5">
             <div class="flex flex-col gap-4">
                 <img src="./images/icon.svg" alt="cesta" class="w-max h-max">
                 <h2 class="text-5xl font-bold">Welcome to Cesta <br /> were glad to have you</h2>
-                <p class="text-2xl font-medium">Sign up to get started</p>
+                <p class="text-2xl font-medium">Login to get started</p>
             </div>
         </div>
         <form action="signup" class="w-max flex flex-col gap-4">
-            <input type="text" name="username" id="username" placeholder="Full name" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
-            <input type="text" name="contact" id="contactInput" placeholder="Contact" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
             <input type="email" name="email" id="email" placeholder="Email" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
             <input type="password" name="password" id="password" placeholder="Password" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
-            <button class="hover:bg-gray-800 text-2xl h-20 bg-black w-full text-white font-light rounded-lg">Sign Up</button>
-            <a href="./login.php" class="text-center text-2xl mt-4 text-blue-600">Login instead</a>
+            <button class="hover:bg-gray-800 text-2xl h-20 bg-black w-full text-white font-light rounded-lg">Login</button>
+            <a href="./signup.php" class="text-center text-2xl mt-4 text-blue-600">Signup instead</a>
         </form>
     </section>
 
