@@ -177,7 +177,7 @@ include 'dbcon.php';
 
                             // Generate HTML code for each product
                             echo '<div class="box">
-                <span class="discount" style="">-' . number_format($percentageOff, 0) . '%</span>
+                <span class="discount !z-10" style="">-' . number_format($percentageOff, 0) . '%</span>
                 
                 <img src="images/' . $productImage . '" alt="">
                 <h3 style="">' . $productName . '</h3>

@@ -154,7 +154,7 @@ if (isset($_POST['login'])) {
         <div class="flex flex-col gap-2 w-1/2 items-center h-3/5">
             <div class="flex flex-col gap-4">
                 <img src="./images/icon.svg" alt="cesta" class="w-max h-max">
-                <h2 class="text-5xl font-bold">Welcome to Cesta <br /> were glad to have you</h2>
+                <h2 class="text-5xl font-bold leading-snug">Welcome to Cesta <br /> were glad to have you</h2>
                 <p class="text-2xl font-medium">Sign up to get started</p>
             </div>
         </div>
