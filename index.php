@@ -182,7 +182,7 @@ include 'dbcon.php';
                 <img src="images/' . $productImage . '" alt="">
                 <h3 style="">' . $productName . '</h3>
                 
-                <div style="" class="price">Ksh ' . $productPrice . ' <span>Ksh ' . $productOldPrice . '</span></div>
+                <div style="" class="price flex items-center"><span>Ksh ' . $productPrice . '</span> <span>Ksh ' . $productOldPrice . '</span></div>
                 
                 <form method="POST">
                     <input type="hidden" name="product_name" value="' . $productName . '">
