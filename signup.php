@@ -159,11 +159,11 @@ if (isset($_POST['login'])) {
             </div>
         </div>
         <form action="signup.php" class="w-max flex flex-col gap-4">
-            <input type="text" name="username" id="username" placeholder="Full name" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
-            <input type="text" name="contact" id="contactInput" placeholder="Contact" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
-            <input type="email" name="email" id="email" placeholder="Email" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
-            <input type="password" name="password" id="password" placeholder="Password" class="bg-zinc-100 px-6 text-2xl rounded-lg h-20">
-            <button type="submit" name="signup" class="hover:bg-gray-800 text-2xl h-20 bg-black w-full text-white font-light rounded-lg">Sign Up</button>
+            <input type="text" name="username" id="username" placeholder="Full name" class="border-2 focus:border-green-900 focus:border-black bg-zinc-100 px-6 text-2xl rounded-lg h-20">
+            <input type="text" name="contact" id="contactInput" placeholder="Contact" class="border-2 focus:border-green-900 focus:border-black bg-zinc-100 px-6 text-2xl rounded-lg h-20">
+            <input type="email" name="email" id="email" placeholder="Email" class="border-2 focus:border-green-900 focus:border-black bg-zinc-100 px-6 text-2xl rounded-lg h-20">
+            <input type="password" name="password" id="password" placeholder="Password" class="border-2 focus:border-green-900 focus:border-black bg-zinc-100 px-6 text-2xl rounded-lg h-20">
+            <button type="submit" name="signup" class="hover:bg-gray-800 text-2xl h-20 bg-green-900 w-full text-white font-light rounded-lg border-2 border-green-900 border-offset-100 focus:border-black">Sign Up</button>
             <a href="./login.php" class="text-center text-2xl mt-4 text-blue-600">Login instead</a>
         </form>
     </section>
