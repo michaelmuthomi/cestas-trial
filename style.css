@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+  font-display: swap;
+}
 
 :root{
   --green:#27ae60;
@@ -6,7 +11,7 @@
 }
 
 *{
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Inter', sans-serif;
   margin:0; padding:0;
   box-sizing: border-box;
   outline: none; border:none;
@@ -30,13 +35,25 @@ section{
   padding:2rem 9%;
 }
 
+img{
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+a{
+  &:hover{
+    text-decoration: none;
+    color: var(--green);
+  }
+}
+
 .btn{
   display: inline-block;
-  margin-top: 1rem;
-  background:var(--green);
-  color:#fff;
-  padding:.8rem 3rem;
-  font-size: 1.7rem;
+  margin-top: 3rem;
+  background: var(--green);
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.5rem;
   text-align: center;
   cursor: pointer;
 }
@@ -197,6 +214,8 @@ section{
   height: 25rem;
   overflow: hidden;
   position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 
 .banner-container .banner img{
@@ -207,13 +226,15 @@ section{
 
 .banner-container .banner .content{
   position: absolute;
-  top:50%; left: 4%;
+  top:50%; left: 7%;
   transform: translateY(-50%);
 }
 
 .banner-container .banner .content h3{
   font-size: 3rem;
-  color:var(--black);
+  color: black;
+  filter: drop-shadow(0 0 .5rem rgba(0,0,0,.3));
+  font-weight: 600;
 }
 
 .banner-container .banner .content p{
@@ -227,27 +248,60 @@ section{
 
 .category .box-container{
   display: flex;
-  gap: 1.5rem;
+  gap: 3.5rem;
   flex-wrap: wrap;
   padding-top: 1rem;
 }
 
 .category .box-container .box{
-  border:.1rem solid rgba(0,0,0,.3);
   border-radius: .5rem;
   text-align: center;
   padding:2rem;
   flex:1 1 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .category .box-container .box img{
-  width: 20rem;
-  margin:.5rem 0;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.253);
+  object-fit: contain;
+  -webkit-user-drag: none;
+  -moz-user-select: none;
 }
 
 .category .box-container .box h3{
-  font-size: 3.5rem;
+  font-size: 2rem;
   color:var(--black);
+  text-decoration: capitalize;
+}
+
+.sub-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+
+  & h3 {
+    font-size: 1.8rem;
+    color: var(--black);
+    text-transform: capitalize;
+  }
+
+  & img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: rgb(255 242 174 / 53%);
+    object-fit: contain;
+    -webkit-user-drag: none;
+    user-select: none;
+  }
 }
 
 .category .box-container .box p{
@@ -266,10 +320,10 @@ section{
 }
 
 .product .box-container .box{
-  flex:1 1 30rem;
-  text-align: center;
+  flex:1 1 20rem;
+  /* text-align: center; */
   padding:2rem;
-  border:.1rem solid rgba(0,0,0,.3);
+  /* border:.1rem solid rgba(0,0,0,.3); */
   border-radius: .5rem;
   overflow: hidden;
   position: relative;
@@ -277,15 +331,18 @@ section{
 
 .product .box-container .box img{
   height: 20rem;
+  object-fit: contain;
 }
 
 .product .box-container .box .discount{
   position: absolute;
-  top:1rem; left: 1rem;
-  background:rgba(0,255,0,.1);
-  color:var(--green);
-  padding:.7rem 1rem;
-  font-size: 2rem;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0, 255, 0, .1);
+  color: var(--green);
+  padding: 0.7rem 1rem;
+  font-size: 1.4rem;
+  border-radius: 0.5rem
 }
 
 .product .box-container .box .icons{
@@ -315,8 +372,10 @@ section{
 }
 
 .product .box-container .box h3{
-  color:var(--black);
+  color: var(--black);
   font-size: 2.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
 }
 
 .product .box-container .box .stars i{
@@ -326,7 +385,7 @@ section{
 }
 
 .product .box-container .box .price{
-  font-size: 2rem;
+  font-size: 1.6rem;
   color:#333;
   padding:.5rem 0;
 }

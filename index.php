@@ -17,71 +17,44 @@ include 'dbcon.php';
 
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./images/Logo.png" type="image/png">
 </head>
 
 <body>
 
-    <!--header section starts-->
-    <header>
-
-        <div class="header-1">
-            <a href="#" style="" class="logo"><i class="fa-solid fa-basket-shopping"></i></i>Cesta</a>
-
-        </div>
-        <!--header 2-->
-
-        <div class=" header-2 ">
-
-            <div id="menu-bar" class="fa-sharp fa-solid fa-bars"></div>
-            <nav class="navbar">
-                <a href="index.php" style="" class="nav-link active">Home</a>
-                <a href="#category" style="" class="nav-link active">Category</a>
-                <a href="#product" style="" class="nav-link active">Product</a>
-                <a href="contactus.php" style="" class="nav-link active">Contact</a>
-                <a href="admin.php" style="" class="nav-link active">Admin</a>
-            </nav>
-
-            <div class="icons">
-
-                <a href="cart.php" class="fa-sharp fa-solid fa-cart-shopping">
-                    <?php
-                    $countSql = "SELECT COUNT(*) AS total_items FROM cart";
-                    $results = mysqli_query($dbconn, $countSql);
-
-                    $rows = mysqli_fetch_assoc($results);
-                    $totalItems = $rows['total_items'];
-                    echo '<span style="color: #2c2c54;   font-size: 15px; margin-top: 50px; border-radius: 50%;">' . $totalItems . '</span>';
-                    ?>
-                </a>
-                <?php
-                session_start();
-                if (isset($_SESSION['loggedIn'])) {
-
-                } else {
-
-                    echo '<a href="signup.php" class="fa-sharp fa-solid fa-circle-user"></a>';
-                }
-                ?>
-            </div>
-        </div>
-
-    </header>
-    <!--header section ends-->
+    <!-- Navbar -->
+    <nav class="flex items-center gap-20 h-32 px-8 py-6 border-b-[1px] border-gray-100 sticky top-0 bg-white z-10">
+        <img src="./images/Logo.svg" alt="Cesta" class="w-max h-max">
+        <ul class="flex gap-10 text-2xl h-full items-center w-full">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#category">Category</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <input type="text" class="h-full w-full rounded-xl text-xl max-w-[40rem] bg-gray-200 px-10" placeholder="Find fresh fruits & vegetables">
+        </ul>
+        <ul class="flex flex-none gap-10 text-2xl h-full items-center w-max ml-auto">
+            <li><a href="./signup.php">Join Cesta</a></li>
+            <li><a href="#cart"><img src="./images/cart.svg" alt="cart" class="w-max h-max"></a></li>
+        </ul>
+    </nav>
+    <!-- Navbar end -->
 
     <!--home section start-->
-    <section class="home" id="home">
-        <div class="image">
-            <img src="images/home-img.png" alt="">
+    <section class="flex items-center">
+        <div class="flex flex-col gap-5">
+            <h1 class="text-5xl leading-relaxed font-extrabold">Fill Your Fridge with Freshness: <br />
+            Cesta, Your Online Groceries Haven</h1>
+            <p class="font-light text-3xl leading-relaxed">Shop smarter, save time, eat well. <br />
+            Groceries delivered right to your doorstep anywhere in Kenya.</p>
+            <button class="bg-[#007A00] text-white hover:brightness-50 rounded-lg w-max px-4 py-4 text-2xl mt-auto">Start Shopping Now</button>
         </div>
-
-        <div class="content">
-            <span style=" font-size: 20px;">fresh and organic</span>
-            <h3 style="">groceries at your fingertips</h3>
-            <a href="#product" class="btn" style=" border-radius: 5px;">get started</a>
+        <div class="flex justify-center w-1/2">
+            <img src="./images/basket.png" alt="groceries">
         </div>
-
     </section>
     <!--home section end-->
+
+    
 
     <!--banner section starts-->
     <section class="banner-container">
@@ -89,9 +62,9 @@ include 'dbcon.php';
         <div class="banner">
             <img src="images/banner-1.jpg" alt="">
             <div class="content">
-                <h3 style="">special offer</h3>
+                <h3 style="">All the veggies you can eat</h3>
                 <p style=" font-size: 15px;">upto 75% off</p>
-                <a href="#" class="btn" style=" border-radius: 3px;">bill out</a>
+                <a href="#" class="btn" style=" border-radius: 3px;">Shop Now</a>
             </div>
         </div>
 
@@ -100,7 +73,7 @@ include 'dbcon.php';
             <div class="content">
                 <h3 style="">limited offer</h3>
                 <p style=" font-size: 15px;">upto 55% off</p>
-                <a href="#" class="btn" style=" border-radius: 3px;">bill out</a>
+                <a href="#" class="btn" style=" border-radius: 3px;">Shop Now</a>
             </div>
         </div>
 
@@ -110,7 +83,7 @@ include 'dbcon.php';
     <!--category section start-->
     <section class="category" id="category">
 
-        <h1 class="heading" style="">shop by <span style="">category</span></h1>
+        <h2 class="text-3xl font-bold my-4">Shop by Category</h2>
 
         <form action="index.php" method="post">
             <div class="box-container">
@@ -216,7 +189,11 @@ include 'dbcon.php';
 
                             // Generate HTML code for each product
                             echo '<div class="box">
+<<<<<<< HEAD
                 <span class="discount" style="">-' . number_format($percentageOff, 0) . '%</span>
+=======
+                <span class="discount !z-10" style="">-' . number_format($percentageOff, 0) . '%</span>
+>>>>>>> master
                 
                 <img src="images/' . $productImage . '" alt="">
                 <h3 style="">' . $productName . '</h3>
@@ -333,14 +310,22 @@ include 'dbcon.php';
                             echo '<div class="box">
                 <span class="discount" style="">-' . number_format($percentageOff, 0) . '%</span>
                 
+<<<<<<< HEAD
                 <img src="images/' . $productImage . '" alt="">
                 <h3 style="">' . $productName . '</h3>
                 
                 <div style="" class="price">Ksh ' . $productPrice . ' <span>Ksh ' . $productOldPrice . '</span></div>
+=======
+                <img src="images/' . $productImage . '" class="hover:scale-95" alt="">
+                <h3 class="!text-3xl">' . $productName . '</h3>
+                
+                <div style="" class="price flex !gap-3 !items-center">Ksh ' . $productPrice . ' <span>Ksh ' . $productOldPrice . '</span></div>
+>>>>>>> master
                 
                 <form method="POST">
                     <input type="hidden" name="product_name" value="' . $productName . '">
                     <input type="hidden" name="product_price" value="' . $productPrice . '">
+<<<<<<< HEAD
                     <input type="hidden" name="product_image" value="' . $productImage . '">
                     <div class="quantity">
                     <span style="">quantity :</span>
@@ -349,6 +334,9 @@ include 'dbcon.php';
                 </div>
                 <button type="submit" style="width: 295px; border-radius: 3px;  display: block; margin: 0 auto;" name="add_to_cart" class="btn">Add to Cart</button>
                 
+=======
+                    <input type="hidden" name="product_image" value="' . $productImage . '">     
+>>>>>>> master
                 </form>
             </div>';
                         }
@@ -367,6 +355,7 @@ include 'dbcon.php';
 
         <!-- contact -->
 
+<<<<<<< HEAD
         <section class="contact" id="contact">
 
             <h1 class="heading" style=""> contact <span style=""> now </span> </h1>
@@ -391,11 +380,45 @@ include 'dbcon.php';
                     <textarea name="message" style="" placeholder="message" id="" cols="30" rows="10"></textarea>
                     <input type="submit" style=" width: 200px;" value="Send" name="submit" class="btn">
 
+=======
+        <!-- <section class="contact" id="contact">
+
+            <h2 class="text-3xl font-bold my-4">Contact Us</h2>
+
+            <div class="row">
+
+                <form action="contactus.php" method="POST">
+                    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                        <div class="sm:col-span-3">
+                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
+                        <div class="mt-2">
+                            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                        <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
+                        <div class="mt-2">
+                            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                        </div>
+
+                        <div class="sm:col-span-4">
+                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                        <div class="mt-2">
+                            <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        </div>
+                    </div>
+>>>>>>> master
                 </form>
 
             </div>
 
+<<<<<<< HEAD
         </section>
+=======
+        </section> -->
+>>>>>>> master
 
         <!-- end -->
         <!--js file link-->
