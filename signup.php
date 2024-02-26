@@ -172,7 +172,8 @@ if (isset($_POST['login'])) {
             </form>
         </div>
     </div>
- contactInput.addEventListener("input", function (event) {
+    <script>
+        contactInput.addEventListener("input", function (event) {
             var input = event.target.value;
 
             // Remove any non-digit characters
