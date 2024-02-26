@@ -88,33 +88,19 @@ include 'dbcon.php';
         <form action="index.php" method="post">
             <div class="box-container">
 
-                <div class="box">
-                    <h3 style="">vegetables</h3>
-                    <p style="">upto 50% off</p>
+                <div class="sub-category">
                     <img src="images/category-1.png" alt="">
-                    <a>
-                        <button type="submit" style=" width: 300px;" class="btn" name="vegetables">shop now</button>
-                    </a>
+                    <h3 style="">vegetables</h3>
                 </div>
 
-                <div class="box">
-                    <h3 style="">milk</h3>
-                    <p style="">upto 40% off</p>
+                <div class="sub-category">
                     <img src="images/category-2.png" alt="">
-                    <a>
-                        <button type="submit" style=" width: 300px;" class="btn" name="milk">shop now</button>
-                    </a>
+                    <h3 style="">milk</h3>
                 </div>
 
-                <div class="box">
-                    <h3 style="">fruits</h3>
-                    <p style="">upto 12% off</p>
+                <div class="sub-category">
                     <img src="images/category-4.png" alt="">
-                    <a>
-                        <button type="submit" style=" width: 290px;" class="btn" name="fruits">shop now</button>
-                    </a>
-
-
+                    <h3 style="">fruits</h3>
                 </div>
 
             </div>
@@ -151,7 +137,7 @@ include 'dbcon.php';
                 echo '<h1 class="heading" style="">All <span style="">Milk</span></h1>
             ';
             } else {
-                echo '<h1 class="heading" style="">All <span style="">Products</span></h1>
+                echo '<h2 class="text-3xl font-bold my-4">All Products</h2>
             ';
             }
             ?>
@@ -189,11 +175,7 @@ include 'dbcon.php';
 
                             // Generate HTML code for each product
                             echo '<div class="box">
-<<<<<<< HEAD
-                <span class="discount" style="">-' . number_format($percentageOff, 0) . '%</span>
-=======
                 <span class="discount !z-10" style="">-' . number_format($percentageOff, 0) . '%</span>
->>>>>>> master
                 
                 <img src="images/' . $productImage . '" alt="">
                 <h3 style="">' . $productName . '</h3>
@@ -310,33 +292,15 @@ include 'dbcon.php';
                             echo '<div class="box">
                 <span class="discount" style="">-' . number_format($percentageOff, 0) . '%</span>
                 
-<<<<<<< HEAD
-                <img src="images/' . $productImage . '" alt="">
-                <h3 style="">' . $productName . '</h3>
-                
-                <div style="" class="price">Ksh ' . $productPrice . ' <span>Ksh ' . $productOldPrice . '</span></div>
-=======
                 <img src="images/' . $productImage . '" class="hover:scale-95" alt="">
                 <h3 class="!text-3xl">' . $productName . '</h3>
                 
                 <div style="" class="price flex !gap-3 !items-center">Ksh ' . $productPrice . ' <span>Ksh ' . $productOldPrice . '</span></div>
->>>>>>> master
                 
                 <form method="POST">
                     <input type="hidden" name="product_name" value="' . $productName . '">
                     <input type="hidden" name="product_price" value="' . $productPrice . '">
-<<<<<<< HEAD
-                    <input type="hidden" name="product_image" value="' . $productImage . '">
-                    <div class="quantity">
-                    <span style="">quantity :</span>
-                    <input style="" type="number" min="1" max="1000" name="product_quantity" value="1">
-                    <span style="">/kg</span>
-                </div>
-                <button type="submit" style="width: 295px; border-radius: 3px;  display: block; margin: 0 auto;" name="add_to_cart" class="btn">Add to Cart</button>
-                
-=======
                     <input type="hidden" name="product_image" value="' . $productImage . '">     
->>>>>>> master
                 </form>
             </div>';
                         }
@@ -355,32 +319,6 @@ include 'dbcon.php';
 
         <!-- contact -->
 
-<<<<<<< HEAD
-        <section class="contact" id="contact">
-
-            <h1 class="heading" style=""> contact <span style=""> now </span> </h1>
-
-            <div class="row">
-
-                <div class="image">
-                    <img src="images/contact.png" alt="">
-                </div>
-
-                <form action="contactus.php" method="POST">
-                    <div class="inputBox">
-                        <input type="text" style="" name="firstname" placeholder="first name">
-                        <input type="text" style="" name="lastname" placeholder="last name">
-                    </div>
-
-                    <div class="inputBox">
-                        <input type="email" style="" name="email" placeholder="email address">
-                        <input type="number" style="" name="phone" placeholder="phone">
-                    </div>
-
-                    <textarea name="message" style="" placeholder="message" id="" cols="30" rows="10"></textarea>
-                    <input type="submit" style=" width: 200px;" value="Send" name="submit" class="btn">
-
-=======
         <!-- <section class="contact" id="contact">
 
             <h2 class="text-3xl font-bold my-4">Contact Us</h2>
@@ -409,16 +347,11 @@ include 'dbcon.php';
                             <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                         </div>
                     </div>
->>>>>>> master
                 </form>
 
             </div>
 
-<<<<<<< HEAD
-        </section>
-=======
         </section> -->
->>>>>>> master
 
         <!-- end -->
         <!--js file link-->
