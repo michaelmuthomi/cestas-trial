@@ -27,9 +27,9 @@ include 'dbcon.php';
     <nav class="flex items-center gap-20 h-32 px-8 py-6 border-b-[1px] border-gray-100 sticky top-0 bg-white z-10">
         <img src="./images/Logo.svg" alt="Cesta" class="w-max h-max">
         <ul class="flex gap-10 text-2xl h-full items-center w-full">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#category">Category</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="index.php#">Home</a></li>
+            <li><a href="index.php#category">Category</a></li>
+            <li><a href="index.php#contact">Contact Us</a></li>
             <input type="text" class="h-full w-full rounded-xl text-xl max-w-[40rem] bg-gray-200 px-10" placeholder="Find fresh fruits & vegetables">
         </ul>
         <ul class="flex flex-none gap-10 text-2xl h-full items-center w-max ml-auto">
@@ -46,7 +46,9 @@ include 'dbcon.php';
             Cesta, Your Online Groceries Haven</h1>
             <p class="font-light text-3xl leading-relaxed">Shop smarter, save time, eat well. <br />
             Groceries delivered right to your doorstep anywhere in Kenya.</p>
+            <a href="#product">
             <button class="bg-[#007A00] text-white hover:brightness-50 active:brightness-150 rounded-lg w-max px-4 py-4 text-2xl mt-auto">Start Shopping Now</button>
+            </a>
         </div>
         <div class="flex justify-center w-1/2">
             <img src="./images/basket.png" alt="groceries">
