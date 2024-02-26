@@ -321,7 +321,7 @@ include 'dbcon.php';
 
         <!-- contact -->
 
-        <section class="contact" id="contact">
+        <!-- <section class="contact" id="contact">
 
             <h2 class="text-3xl font-bold my-4">Contact Us</h2>
 
@@ -353,7 +353,7 @@ include 'dbcon.php';
 
             </div>
 
-        </section>
+        </section> -->
 
         <!-- end -->
         <!--js file link-->
