@@ -46,7 +46,7 @@ include 'dbcon.php';
             Cesta, Your Online Groceries Haven</h1>
             <p class="font-light text-3xl leading-relaxed">Shop smarter, save time, eat well. <br />
             Groceries delivered right to your doorstep anywhere in Kenya.</p>
-            <button class="bg-[#007A00] text-white hover:brightness-50 rounded-lg w-max px-4 py-4 text-2xl mt-auto">Start Shopping Now</button>
+            <button class="bg-[#007A00] text-white hover:brightness-50 active:brightness-150 rounded-lg w-max px-4 py-4 text-2xl mt-auto">Start Shopping Now</button>
         </div>
         <div class="flex justify-center w-1/2">
             <img src="./images/basket.png" alt="groceries">
