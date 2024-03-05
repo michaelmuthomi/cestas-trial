@@ -1,4 +1,5 @@
-<?php include('header.php');
+<?php 
+include('header.php');
 session_start();
 include 'dbcon.php';
 $sql = mysqli_query($dbconn, "SELECT * FROM signup");
@@ -25,37 +26,6 @@ if (isset($_POST['signup'])) {
     }
 }
 ?>
-<?php
-// ... your existing code ...
-
-if (isset($_POST['login'])) {
-    $login_email = $_POST['login_email'];
-    $login_password = sha1($_POST['login_password']);
-
-    $query = "SELECT * FROM signup WHERE email='$login_email' AND password='$login_password'";
-    $result = mysqli_query($dbconn, $query);
-
-    if (mysqli_num_rows($result) == 1) {
-        // Valid credentials, retrieve the contact from the database
-        $row = mysqli_fetch_assoc($result);
-        $contact = $row['contact'];
-        $email = $row['email'];
-
-        // Set session cookies and redirect to cart.php
-
-        $_SESSION['contact'] = $contact;
-        $_SESSION['email'] = $email;
-        $_SESSION['loggedIn'] = true;
-
-        header("Location: cart.php");
-        exit(); // Make sure to exit after redirecting
-    } else {
-        // Invalid credentials, show JavaScript popup
-        echo '<script>alert("Invalid credentials")</script>';
-    }
-}
-?>
-
 
 <head>
     <link rel="stylesheet" href="style.css">
@@ -63,74 +33,6 @@ if (isset($_POST['login'])) {
     <link rel="icon" href="./images/Logo.png" type="image/png">
 </head>
 
-<style>
-    .sign_up {
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-        margin-top: 10px;
-    }
-
-    .sign_up .logo {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .sign_up h1 {
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-
-    .sign_up .text-muted {
-        font-size: 14px;
-    }
-
-    .sign_up .form-control {
-        margin-bottom: 10px;
-    }
-
-    .sign_up .form-group {
-        text-align: center;
-    }
-
-    input {
-        width: 350px;
-        height: 40px;
-        padding: 0px 0px 0px 17px;
-    }
-
-    .tab {
-        display: none;
-    }
-
-    .tab.active {
-        display: block;
-    }
-
-    .tab-content {
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-        margin-top: 10px;
-    }
-
-    .tab-buttons {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .tab-buttons button {
-        padding: 10px 20px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-</style>
 
 <body>
     <!--header section starts-->

@@ -609,3 +609,17 @@ a{
   }
 
 }
+
+.login {
+  max-width: 400px !important;
+  margin: 0 auto !important;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-top: 10px;
+}
+
+input{
+  width: 300px !important;
+}

@@ -1,32 +1,8 @@
-<?php include('header.php');
+<?php
+include('header.php');
 session_start();
 include 'dbcon.php';
 $sql = mysqli_query($dbconn, "SELECT * FROM signup");
-
-
-if (isset($_POST['signup'])) {
-    $email = $_POST['email'];
-    $username = $_POST['username'];
-    $password = sha1($_POST['password']);
-    $contact = $_POST['contact'];
-
-    $connect = "INSERT signup(username, email, password, contact) VALUES ('$username','$email','$password','$contact')";
-    $query = mysqli_query($dbconn, $connect);
-
-    if ($query) {
-        echo '<script>alert("SignUp Successfully")</script>';
-        header("Refresh: 1; url=index.php");
-
-
-        $_SESSION['contact'] = $contact;
-        $_SESSION['loggedIn'] = true;
-    } else {
-        echo '<script>alert("Submission Failed!")</script>';
-    }
-}
-?>
-<?php
-// ... your existing code ...
 
 if (isset($_POST['login'])) {
     $login_email = $_POST['login_email'];
@@ -63,74 +39,6 @@ if (isset($_POST['login'])) {
     <link rel="icon" href="./images/Logo.png" type="image/png">
 </head>
 
-<style>
-    .sign_up {
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-        margin-top: 10px;
-    }
-
-    .sign_up .logo {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .sign_up h1 {
-        margin-top: 0;
-        margin-bottom: 10px;
-    }
-
-    .sign_up .text-muted {
-        font-size: 14px;
-    }
-
-    .sign_up .form-control {
-        margin-bottom: 10px;
-    }
-
-    .sign_up .form-group {
-        text-align: center;
-    }
-
-    input {
-        width: 350px;
-        height: 40px;
-        padding: 0px 0px 0px 17px;
-    }
-
-    .tab {
-        display: none;
-    }
-
-    .tab.active {
-        display: block;
-    }
-
-    .tab-content {
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-        margin-top: 10px;
-    }
-
-    .tab-buttons {
-        text-align: center;
-        margin-top: 10px;
-    }
-
-    .tab-buttons button {
-        padding: 10px 20px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-</style>
 
 <body>
     <!--header section starts-->
@@ -149,7 +57,7 @@ if (isset($_POST['login'])) {
     </nav>
     <!--header section ends-->
 
-    <section class="flex gap-20 w-full items-center gap-8  h-[80vh]">
+    <section class="flex gap-20 w-full items-center gap-8 h-[80vh] w-[80vw]">
         <div class="flex flex-col gap-2 w-1/2 items-center h-3/5">
             <div class="flex flex-col gap-4">
                 <img src="./images/icon.svg" alt="cesta" class="w-max h-max">
@@ -157,10 +65,10 @@ if (isset($_POST['login'])) {
                 <p class="text-2xl font-medium">Login to get started</p>
             </div>
         </div>
-        <form action="signup" class="w-max flex flex-col gap-4">
+        <form action="login.php" class="w-max flex flex-col gap-4">
             <input type="email" name="email" id="email" placeholder="Email" class="border-2 focus:border-green-900 focus:border-black bg-zinc-100 px-6 text-2xl rounded-lg h-20" required>
             <input type="password" name="password" id="password" placeholder="Password" class="border-2 focus:border-green-900 focus:border-black bg-zinc-100 px-6 text-2xl rounded-lg h-20" required>
-            <button class="hover:bg-gray-800 text-2xl h-20 bg-green-900 w-full text-white font-light rounded-lg border-2 border-green-900 border-offset-100 focus:border-black">Login</button>
+            <button action="submit" name="login" class="hover:bg-gray-800 text-2xl h-20 bg-green-900 w-full text-white font-light rounded-lg border-2 border-green-900 border-offset-100 focus:border-black">Login</button>
             <a href="./signup.php" class="text-center text-2xl mt-4 text-blue-600">Signup instead</a>
         </form>
     </section>
